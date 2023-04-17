@@ -15,18 +15,13 @@ const {
 router.route('/').get(getThought).post(createThought);
 
 // getting a single thought, putting thought, and deleting thought
-router.route('/:thoughtId')
-.get(getSingleThought)
-.put(updateThought)
-.delete(deleteThought);
+router.route('/:thoughtId').get(getSingleThought).put(updateThought).delete(deleteThought);
 
 //  /api/thoughts/:thoughtId/reactions POST new reactions
-router.route('/:thoughtId/reactions')
-.post(createReaction);
+router.route('/:thoughtId/reactions').post(createReaction);
 
 // gettting reaction and deleting that reaction with the ID
-router.route('/:thoughtId/reactions/:reactionId')
-.delete(deleteReaction);
+router.route('/:thoughtId/reactions/:reactionId').delete(deleteReaction);
 
 //exporting all information 
 module.exports = router;

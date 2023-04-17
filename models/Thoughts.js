@@ -1,7 +1,8 @@
 const { Schema, model, Types } = require('mongoose');
 // mongoose types  
 // importing moment for the timestamp! 
-const moment = require('moment')
+const moment = require('moment');
+const { Thoughts } = require('.');
 
 // addding thoughts schema
 const thoughtSchema = new Schema (
@@ -71,6 +72,6 @@ thoughtSchema.virtual('reactionCount')
 })
 
 
-const Thought = model('Thought', thoughtSchema);
+const Thoughts = model('Thoughts', thoughtSchema);
 
-module.exports = Thought;
+module.exports = Thoughts;
