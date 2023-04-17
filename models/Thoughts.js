@@ -1,8 +1,8 @@
-const { Schema, model, Types } = require('mongoose');
+const { Schema, model } = require('mongoose');
 // mongoose types  
 // importing moment for the timestamp! 
-const moment = require('moment');
-const { Thoughts } = require('.');
+// const moment = require('moment');
+const reactionSchema = require("./Reaction");
 
 // addding thoughts schema
 const thoughtSchema = new Schema (
@@ -34,35 +34,35 @@ const thoughtSchema = new Schema (
 )
 
 // adding reaction schema 
-const reactionSchema = new Schema (
-    {
-       reactionId: {
-        type: Schema.Types.ObjectId,
-        default: () => new Types.ObjectId(),
-       },
-       reactionBody: {
-        type: String,
-        required: true,
-        maxlength: 280
-       },
-       username: {
-        type: String,
-        required: "ERROR: Username is required! Try Again",
-       },
-       createdAt: {
-        type: Date,
-        default: Date.now,
-        get: createdAtVal => moment(createdAtVal).format("MMM DD, YYYY [at] hh:mm a"),
-       },
-    },
-    {
-        toJSON: {
-            virtuals: true,
-            getters: true
-        },
-        id: false,
-    }
-)
+// const reactionSchema = new Schema (
+//     {
+//        reactionId: {
+//         type: Schema.Types.ObjectId,
+//         default: () => new Types.ObjectId(),
+//        },
+//        reactionBody: {
+//         type: String,
+//         required: true,
+//         maxlength: 280
+//        },
+//        username: {
+//         type: String,
+//         required: "ERROR: Username is required! Try Again",
+//        },
+//        createdAt: {
+//         type: Date,
+//         default: Date.now,
+//         get: createdAtVal => moment(createdAtVal).format("MMM DD, YYYY [at] hh:mm a"),
+//        },
+//     },
+//     {
+//         toJSON: {
+//             virtuals: true,
+//             getters: true
+//         },
+//         id: false,
+//     }
+// )
 
 
 // getting the number of friends 
