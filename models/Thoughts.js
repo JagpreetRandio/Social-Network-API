@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 // mongoose types  
 // importing moment for the timestamp! 
-// const moment = require('moment');
+const moment = require('moment');
 const reactionSchema = require("./Reaction");
 
 // addding thoughts schema
